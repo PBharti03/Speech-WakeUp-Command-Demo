@@ -1,0 +1,118 @@
+/* App Container */
+.app-root {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header */
+.app-header {
+  padding: 20px 30px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.app-header p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Main Content Area */
+.app-main {
+  padding: 30px;
+  min-height: 400px;
+}
+
+/* Wake Listener */
+.wake-listener {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ffc107;
+  background-color: #fff3cd;
+  color: #856404;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Voice Command Input */
+.voice-command {
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #e2ffe8;
+}
+
+.voice-command .prompt {
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.voice-command .partial,
+.voice-command .last-command {
+  padding: 8px;
+  border-bottom: 1px dashed #ced4da;
+  font-size: 0.9em;
+}
+
+.voice-command .partial {
+  font-style: italic;
+  color: #495057;
+}
+
+.voice-command .last-command {
+    font-weight: 500;
+    border: none;
+}
+
+
+/* Result Display */
+.result-display .status {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #007bff;
+  background-color: #e7f3ff;
+  color: #004085;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.result-display h3 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.result-display .box {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.result-display .empty {
+  color: #999;
+  font-style: italic;
+}
+
+.result-display ol {
+  margin: 0;
+  padding-left: 20px;
+}
+.result-display li {
+    margin-bottom: 5px;
+}
