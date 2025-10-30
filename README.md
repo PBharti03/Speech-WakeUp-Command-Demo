@@ -1,38 +1,33 @@
 # 🗣️ Voice WakeUp & Command Web App
 
-This is a simple web application that brings voice control to your browser! It's built with the common web frameworks you're learning—React—and uses a clever library to access your browser's built-in voice recognition feature.
+This is a simple web app that brings voice control to your browser with your voice! It's built with the common web frameworks using React and uses a clever library to access your browser's built-in voice recognition feature.
 
-### 💡 What It Does
+# What It Does
 
-1. Listens quietly in the background for a wake phrase — for example, “hey assistant.”, "hey app", "hey Google"
-2. When it hears the wake phrase, it **wakes up** and starts listening for voice commands.
-3. You can say one or more short commands (like “turn on the light” or “what’s the weather”).
-4. The Timeout: If you don't say anything for about 5 seconds, the app realizes the conversation is over and politely goes back to Sleeping Mode.
+1. It quietly listens in the background for a wake phrase like “hey app” or “hello app”
+2. When it hears you, it perks up and listens for commands.
+3. You can say some short commands (like “turn on the light” or “what’s the weather”).
+4. After a few seconds of silence (about 5), it goes back to sleep mode, waiting for your next “hey app.”
 
-### ⚙️ How to Run It
+# How to Run It
 
-1. Make sure you have **Node.js** and **npm** installed.
-2. Create a new React app or clone this project.
-3. Open your project in VS Code (or your favorite editor).
-4. Install the required package:
+1. Make sure you have Node.js and npm installed.
+2. Create a new React app (or clone this repo).
+3. Open the project in VS Code or your favorite editor.
+4. Install the only dependency you need:
 
-```bash
 npm install react-speech-recognition
-```
 
 5. Start the app:
 
-```bash
 npm start
-```
 
-6. Open your browser to `http://localhost:3000`.
+6. Open your browser and go to to `http://localhost:3000`.
 
-> Works best in **Google Chrome** or **Microsoft Edge** because they have the best support for voice recognition. I have checked in these two.
+This application works best in Google Chrome or Microsoft Edge, since they have the most reliable voice recognition support. I have checked in these two.
 
-### 🧱 Project Structure
+# Project Structure
 
-```
 src/
 ├── App.jsx # Main app logic
 ├── components/
@@ -44,16 +39,15 @@ src/
 └── index.css # Basic styling
 ```
 
-### 🧩 Key Features
+# Key Features
 
-- **Wake Word Detection:** Say “hey app” or similar phrases to activate.
-- **Multiple Command Capture:** Speak several short commands after waking.
-- **Auto Reset:** Returns to sleeping mode after 5 seconds of silence.
-- **No Buttons:** Entirely voice-controlled.
+-> Wake Word Detection — By saying “hey app” to activate the application
+-> Command Recognition — Give short voice commands naturally
+-> Auto Sleep Mode — Goes back to sleep after 5 seconds of silence
+-> This web app is entirely voice-controlled.
 
-### 📋 Notes
+# Notes
 
-- Voice recognition uses the **Web Speech API** (experimental in some browsers).
+- The app uses the Web Speech API through the react-speech-recognition library.
   (Sleep -> Wake -> Sleep).
-- Only available in browsers that support speech recognition.
-- For a real product, you’d likely use a dedicated voice SDK or cloud speech service.
+- Only works in browsers that can do voice recognition.
