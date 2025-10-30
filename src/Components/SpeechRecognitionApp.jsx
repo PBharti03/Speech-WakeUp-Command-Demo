@@ -4,24 +4,24 @@ import ResultDisplay from "./ResultDisplay";
 import WakeUpCommand from "./WakeUpCommand";
 
 export default function SpeechRecognitionApp() {
-const [isAwake, setIsAwake] = useState(false);
-const [wakePhrase, setWakePhrase] = useState('');
-const [commands, setCommands] = useState([]);
-const [status, setStatus] = useState('Idle');
+let [isAwake, setIsAwake] = useState(false);
+let [wakePhrase, setWakePhrase] = useState('');
+let [commands, setCommands] = useState([]);
+let [status, setStatus] = useState('Idle');
 
-const handleWake = useCallback((phrase) => {
+let handleWake = useCallback((phrase) => {
 setIsAwake(true);
 setWakePhrase(phrase);
 setStatus(`Wake word detected — ${phrase}`);
 setCommands([]);
 }, []);
 
-  const handleCommand = useCallback((text) => {
+  let handleCommand = useCallback((text) => {
     setCommands((prev) => [...prev, text]);
     setStatus('Captured command');
   }, []);
 
-  const handleReset = useCallback(() => {
+  let handleReset = useCallback(() => {
     setIsAwake(false);
     setStatus('Reset to wake listener (idle)');
   }, []);

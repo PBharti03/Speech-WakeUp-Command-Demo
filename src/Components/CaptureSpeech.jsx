@@ -5,14 +5,14 @@ import SpeechRecognition, {
 } from 'react-speech-recognition';
 
 export default function CaptureSpeech({ onCommand, onReset, onStatus }) {
-  const { transcript, resetTranscript, browserSupportsSpeechRecognition } =
+  let { transcript, resetTranscript, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
-  const [lastCommand, setLastCommand] = useState('');
-  const inactivityTimeoutRef = useRef(null);
-  const endOfCommandTimerRef = useRef(null);
-  const lastTranscriptRef = useRef('');
+  let [lastCommand, setLastCommand] = useState('');
+  let inactivityTimeoutRef = useRef(null);
+  let endOfCommandTimerRef = useRef(null);
+  let lastTranscriptRef = useRef('');
 
-  const clearTimers = useCallback(() => {
+  let clearTimers = useCallback(() => {
     if (inactivityTimeoutRef.current)
       clearTimeout(inactivityTimeoutRef.current);
     if (endOfCommandTimerRef.current)
@@ -21,7 +21,7 @@ export default function CaptureSpeech({ onCommand, onReset, onStatus }) {
     endOfCommandTimerRef.current = null;
   }, []);
 
-  const resetInactivityTimer = useCallback(() => {
+  let resetInactivityTimer = useCallback(() => {
     if (inactivityTimeoutRef.current)
       clearTimeout(inactivityTimeoutRef.current);
     inactivityTimeoutRef.current = setTimeout(() => {
@@ -71,7 +71,7 @@ export default function CaptureSpeech({ onCommand, onReset, onStatus }) {
     if (endOfCommandTimerRef.current)
       clearTimeout(endOfCommandTimerRef.current);
     endOfCommandTimerRef.current = setTimeout(() => {
-      const text = transcript.trim();
+      let text = transcript.trim();
 
       if (text) {
         onStatus && onStatus(`Command captured: "${text}"`);

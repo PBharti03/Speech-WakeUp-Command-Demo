@@ -7,7 +7,7 @@ import SpeechRecognition, {
 const WAKE_PHRASES = ['hey app', 'hello app'];
 
 export default function WakeUpCommand({ onWake, onStatus, enabled = true }) {
-  const {
+  let {
     transcript,
     resetTranscript,
     listening,
@@ -42,10 +42,10 @@ export default function WakeUpCommand({ onWake, onStatus, enabled = true }) {
 
   useEffect(() => {
     if (!transcript) return;
-    const lower = transcript.toLowerCase();
+    let lower = transcript.toLowerCase();
     onStatus && onStatus('Listening for wakeUp word...');
 
-    for (const phrase of WAKE_PHRASES) {
+    for (let phrase of WAKE_PHRASES) {
       if (lower.includes(phrase)) {
         SpeechRecognition.abortListening();
         onStatus && onStatus(`WakeUp phrase detected: "${phrase}"`);
@@ -54,7 +54,7 @@ export default function WakeUpCommand({ onWake, onStatus, enabled = true }) {
         return;
       }
     }
-  }, [transcript]);
+  }, []);
 
   return (
     <div className="card p-3 border-warning">
